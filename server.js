@@ -150,7 +150,7 @@ function getPrice(res, lb, oz, type) {
 				const lb = Number(request.query.lb);
 				const oz = Number(request.query.oz);
 				const type = request.query.type;
-				const weight = (Number(request.query.lb) + Number(request.query.oz));
+				//const weight = (Number(request.query.lb) + Number(request.query.oz));
 
 				if (lb == 0 &&
 					oz > 4 && (type == "First Class Letter: Stamped" ||
@@ -169,9 +169,9 @@ function getPrice(res, lb, oz, type) {
 
 				switch (type) {
 					case "First Class Letter: Stamped":
-						if (weight <= 1) {
+						if ((request.query.lb)+(request.query.oz)) <= 1) {
 							result = 0.55;
-						} else if (weight <= 2) {
+						} else if ((lb + oz) <= 2) {
 							result = 0.870;
 						} else if (weight <= 3) {
 							result = .85;
