@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*add styling for projet CS313 2*/
 .jumbotron {
   background: #000000;
@@ -41,4 +42,49 @@
 
 body {
   background-color: lightblue;
+=======
+/*add styling for projet CS313 2*/
+.jumbotron {
+  background: #000000;
+  color: white;
+  padding-bottom: 80px; }
+  .jumbotron .btn-primary {
+    background: #845ac7;
+    border-color: #845ac7; }
+    .jumbotron .btn-primary:hover {
+      background: #7646c1; }
+  .jumbotron p {
+    color: #d9ccee;
+    max-width: 75%;
+    margin: 1em auto 2em; }
+  .navbar + .jumbotron {
+    margin-top: -20px; }
+  .jumbotron .lang-logo {
+    display: block;
+    /*background: #B01302;*/
+    /*border-radius: 50%;*/
+    /*overflow: hidden;*/
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    /*border: 2px solid white; */}
+    .jumbotron .lang-logo img {
+      width: 210%;
+	  margin-left: -50px;}
+
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+body {
+  background-color: lightblue;
+>>>>>>> 4791de272d0b7648e8baccf55eea9f836865a043
 }
