@@ -52,57 +52,23 @@ app.listen(PORT, function () {
 	console.log(`Listening on ${ PORT }`)
 });
 
-//week 9 teach code
-function getResults(data) {
-	if (data.submit == 'Add') {
-		return add(data.num1, data.num2);
-	} else if (data.submit == 'Subtract') {
-		return subtract(data.num1, data.num2);
-	} else if (data.submit == 'Multiply') {
-		return multiply(data.num1, data.num2);
-	} else if (data.submit == 'Divide') {
-		return divide(data.num1, data.num2);
-	} else {
-		console.log("Something weird happened. What did you click on????");
-	}
-}
 
-function subtract(num1, num2) {
-	// console.log("Subtract" + num1 + ' ' + num2);
-	return parseInt(num1) - parseInt(num2);
-}
-
-function divide(num1, num2) {
-	// console.log("Divide" + num1 + ' ' + num2);
-	return parseInt(num1) / parseInt(num2);
-}
-
-function multiply(num1, num2) {
-	// console.log("Multiply" + num1 + ' ' + num2);
-	return parseInt(num1) * parseInt(num2);
-}
-
-function add(num1, num2) {
-	// console.log("Add" + num1 + ' ' + num2);
-	return parseInt(num1) + parseInt(num2);
-}
-
-
-//week 9 PROVE code
 app.get("/calculateShipping", calculate);
 console.log("ok the code is working so far");
 
 
-//week 9 prove code for postal rate calculator
-//not sure if I need to declare these or not
-/*const oz = 0;
-var type = null;
-*/
+////////////////////////***********************///////////////////////////////
+//-----------week 9 prove code for postal rate calculator------------------//
+////////////////////////***********************///////////////////////////////
 
+
+
+/////*****************week 9 teach code CALC********************//////
 function calculate(req, res) {
 	const lb = Number(request.query.lb);
 	const oz = Number(request.query.oz);
 	const type = request.query.type;
+	const weight = (Number(request.query.lb) + Number(request.query.oz));
 
 	if (lb == 0 &&
 		oz > 4 && (type == "First Class Letter: Stamped" ||
@@ -175,57 +141,16 @@ function getPrice(res, lb, oz, type) {
 				console.log(`Listening on ${ PORT }`)
 			});
 
-			//week 9 teach code
-			function getResults(data) {
-				if (data.submit == 'Add') {
-					return add(data.num1, data.num2);
-				} else if (data.submit == 'Subtract') {
-					return subtract(data.num1, data.num2);
-				} else if (data.submit == 'Multiply') {
-					return multiply(data.num1, data.num2);
-				} else if (data.submit == 'Divide') {
-					return divide(data.num1, data.num2);
-				} else {
-					console.log("Something weird happened. What did you click on????");
-				}
-			}
-
-			function subtract(num1, num2) {
-				// console.log("Subtract" + num1 + ' ' + num2);
-				return parseInt(num1) - parseInt(num2);
-			}
-
-			function divide(num1, num2) {
-				// console.log("Divide" + num1 + ' ' + num2);
-				return parseInt(num1) / parseInt(num2);
-			}
-
-			function multiply(num1, num2) {
-				// console.log("Multiply" + num1 + ' ' + num2);
-				return parseInt(num1) * parseInt(num2);
-			}
-
-			function add(num1, num2) {
-				// console.log("Add" + num1 + ' ' + num2);
-				return parseInt(num1) + parseInt(num2);
-			}
-
-
-			//week 9 PROVE code
+//////////********week 9 PROVE code POSTSL CALC*********/////////////
 			app.get("/calculateShipping", calculate);
 			console.log("ok the code is working so far");
 
-
-			//week 9 prove code for postal rate calculator
-			//not sure if I need to declare these or not
-			/*const oz = 0;
-			var type = null;
-			*/
 
 			function calculate(req, res) {
 				const lb = Number(request.query.lb);
 				const oz = Number(request.query.oz);
 				const type = request.query.type;
+				const weight = (Number(request.query.lb) + Number(request.query.oz));
 
 				if (lb == 0 &&
 					oz > 4 && (type == "First Class Letter: Stamped" ||
@@ -297,4 +222,40 @@ function getPrice(res, lb, oz, type) {
 		price: price
 	};
 	response.render("postal/results", params);
+}
+
+
+/////*****************week 9 teach code DO MATH****************//////
+function getResults(data) {
+	if (data.submit == 'Add') {
+		return add(data.num1, data.num2);
+	} else if (data.submit == 'Subtract') {
+		return subtract(data.num1, data.num2);
+	} else if (data.submit == 'Multiply') {
+		return multiply(data.num1, data.num2);
+	} else if (data.submit == 'Divide') {
+		return divide(data.num1, data.num2);
+	} else {
+		console.log("Something weird happened. What did you click on????");
+	}
+}
+
+function subtract(num1, num2) {
+	// console.log("Subtract" + num1 + ' ' + num2);
+	return parseInt(num1) - parseInt(num2);
+}
+
+function divide(num1, num2) {
+	// console.log("Divide" + num1 + ' ' + num2);
+	return parseInt(num1) / parseInt(num2);
+}
+
+function multiply(num1, num2) {
+	// console.log("Multiply" + num1 + ' ' + num2);
+	return parseInt(num1) * parseInt(num2);
+}
+
+function add(num1, num2) {
+	// console.log("Add" + num1 + ' ' + num2);
+	return parseInt(num1) + parseInt(num2);
 }
