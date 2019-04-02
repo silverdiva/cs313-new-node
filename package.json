@@ -1,10 +1,11 @@
 {
-  "name": "node-js-getting-started",
+  "name": "Node.js Project 2",
   "version": "0.3.0",
-  "description": "A sample Node.js app using Express 4",
+  "description": "CS313 Node.js Project 2",
+  "author": "Kimberly Llanos <par16048@byui.edu>",
   "engines": {
     "node": "10.x",
-	"npm": "6.4.1"
+    "npm": "6.4.1"
   },
   "main": "server.js",
   "scripts": {
@@ -13,10 +14,14 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^7.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "fs": "0.0.1-security",
+    "morgan": "^1.9.1",
     "path": "^0.12.7",
+    "pg": "^7.9.0",
+    "sequelize": "^5.2.8",
     "url": "^0.11.0"
   },
   "devDependencies": {
@@ -25,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/silverdiva/cs313-new-node"
   },
   "keywords": [
     "node",
@@ -34,5 +39,3 @@
   ],
   "license": "MIT"
 }
-
-
