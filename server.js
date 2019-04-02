@@ -1,11 +1,15 @@
 var express = require("express");
 require('dotenv').config();
 var path = require('path');
+const { Pool, Client } = require('pg');// postgres db connection module
+const connectionString = process.env.DATABASE_URL;
 
+// Establish a new connection to the data source specified the connection string.
+const pool = new Pool({connectionString: connectionString});
 
 //locahost
 var app = express();
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
 
 //localhost
 app.listen(PORT, function () {
@@ -38,20 +42,17 @@ app.get("/pages", function (req, res) {
 app.get("/familyhistory", function (req, res) {
 	// Controller
 	console.log("Received a request for the familyhistory page");
-	var params = {
-		result:getPerson(req.query)
+	//var params = {
+		//result:getPerson(req.query)
+		// return json object person
 	};
 	res.render("familyhistory");
 });
-	// Following the "Single query" approach from: https://node-postgres.com/features/pooling#single-query
-	const { Pool } = require("pg"); // This is the postgres database connection module.
 
-
-const connectionString = process.env.DATABASE_URL;
-
-
-	// Establish a new connection to the data source specified the connection string.
-	const pool = new Pool({connectionString: connectionString});
+app.get("/services/getPerson, (req, res) => {
+        getPerson(req.query.id, res)
+        // return json object person
+    })
 
 	// This says that we want the function "getPerson" below to handle
 	// any requests that come to the /getPerson endpoint
