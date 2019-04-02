@@ -1,6 +1,6 @@
 var express = require("express");
 require('dotenv').config();
-var path = require('path')
+var path = require('path');
 
 
 //locahost
@@ -46,20 +46,8 @@ app.get("/familyhistory", function (req, res) {
 	// Following the "Single query" approach from: https://node-postgres.com/features/pooling#single-query
 	const { Pool } = require("pg"); // This is the postgres database connection module.
 
-	
-213258787\
-// LOCAL POSTGRES DB: connection string that refers to a local postgres DB - ONLY USE FOR TESTING PURPOSES
-		//const connectionString = process.env.DATABASE_URL || "postgres://admin_user:admin_pass@localhost:5432/familyhistory";
-	
-
-/*TOGGLE BETWEEN THE 2 CONNECTION STRINGS - ONE USES "true" and the other doesn't
-//i.e comment ONE of them out!*/
-//when connecting to HEROKU CLOUD APP, we need "true" at end of connectionString - //notice that "postgresql-metric-65706:" is used here
 
 const connectionString = process.env.DATABASE_URL;
-
-	//const connectionString = process.env.DATABASE_URL || "postgresql-metric-65706://nvjydtnfbwouem:df4e48d06bd2f5eb0306c6966cf1034810ad92855b79b464a3ec9e8a7cb9b888@ec2-23-21-106-241.compute-1.amazonaws.com:5432/d427tvjt5pb8vn="true";
-
 
 
 	// Establish a new connection to the data source specified the connection string.
